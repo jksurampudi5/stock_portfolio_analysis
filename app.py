@@ -1,6 +1,18 @@
+# import streamlit as st
+# import pandas as pd
+# import plotly.express as px
+
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import plotly.express as px
+
+# Set page configuration (Must be the first Streamlit command)
+st.set_page_config(page_title="Stock Portfolio Dashboard", layout="wide")
+
+# Streamlit App Title
+st.title("📈 Stock Portfolio Dashboard")
 
 # Load custom CSS
 def load_css(file_name):
@@ -11,8 +23,7 @@ def load_css(file_name):
 load_css("style.css")
 
 # Streamlit App Title
-st.set_page_config(page_title="Stock Portfolio Dashboard", layout="wide")
-st.title("📈 Stock Portfolio Dashboard")
+
 
 # File Upload
 uploaded_file = st.file_uploader("Upload your stock CSV file", type=["csv"])
