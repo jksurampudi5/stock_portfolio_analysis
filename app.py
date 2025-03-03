@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import plotly.express as px
+
+# Load custom CSS
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Apply custom CSS
+load_css("style.css")
 
 # Streamlit App Title
 st.set_page_config(page_title="Stock Portfolio Dashboard", layout="wide")
@@ -86,7 +92,7 @@ if uploaded_file is not None:
             st.dataframe(loss_stocks[[stock_column, "Profit/Loss", quantity_column]])
             st.write(f"**Total Loss: {loss_stocks['Profit/Loss'].sum():,.2f}**")
 
-        # 🔹 NEW: Improved Interactive Chart for Profit/Loss Breakdown
+        # Improved Interactive Chart for Profit/Loss Breakdown
         st.subheader("📊 Profit & Loss Breakdown")
 
         fig = px.bar(
@@ -105,4 +111,3 @@ if uploaded_file is not None:
         fig.update_layout(xaxis_title="Profit/Loss Amount", yaxis_title="Stock", height=600)
 
         st.plotly_chart(fig, use_container_width=True)
-
