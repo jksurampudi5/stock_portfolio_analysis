@@ -1,0 +1,39 @@
+/* style.css */
+
+/* Center the main title */
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Green color */
+}
+
+/* Style the sidebar */
+[data-testid="stSidebar"] {
+    background-color: #f0f2f6;
+    padding: 20px;
+}
+
+/* Style the file uploader */
+[data-testid="stFileUploader"] {
+    border: 2px dashed #4CAF50;
+    padding: 10px;
+}
+
+/* Style the subheaders */
+h2 {
+    color: #4CAF50;
+}
+
+/* Style the dataframes */
+[data-testid="stDataFrame"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style the Plotly chart container */
+[data-testid="stPlotlyChart"] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
